@@ -1,0 +1,17 @@
+{
+    "name": "ramajo/curs",
+    "autoload": {
+        "psr-4": {
+            "Ramajo\\Curs\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "LacamJC",
+            "email": "joaoramajo744@gmail.com"
+        }
+    ],
+    "require": {
+        "php-amqplib/php-amqplib": "^2.0"
+    }
+}
