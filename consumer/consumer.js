@@ -2,10 +2,11 @@ const amqp = require('amqplib');
 const path = require("path");
 const fs = require("fs");
 const { sendEmail } = require('./sendMail');
+const rabbitmqHost = process.env.RABBITMQ_HOST || 'rabbitmq'; 
 async function startConsumer() {
     try {
         // 1. Conecta ao RabbitMQ
-        const connection = await amqp.connect('amqp://localhost');
+        const connection = await amqp.connect(`amqp://${rabbitmqHost}`);
         const channel = await connection.createChannel();
 
         // 2. Declara a fila (mesmo nome usado no PHP)
@@ -34,7 +35,9 @@ async function createLog(msg) {
     let date = new Date()
     const filePath = path.join(__dirname, './logs/sql/log.txt');
     fs.appendFile(filePath, `${msg} - ${formatarDataHora()} \n`, (err) => {
-        if (err) throw err;
+        if (err){
+            console.log('erro ao criar log');
+        };
         
     })
 }

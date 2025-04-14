@@ -1,15 +1,21 @@
-FROM alpine:3.20
 
-ENV NODE_VERSION 23.11.0 
+# Use a imagem oficial do Node.js com Alpine (versão LTS recomendada)
+FROM node:18-alpine
 
-WORKDIR /app 
+# Define o diretório de trabalho
+WORKDIR /app
 
-COPY package.json package-lock.json* ./ 
+# Copia os arquivos de definição de dependências
+COPY package.json package-lock.json ./
 
-RUN npm install 
+RUN npm ci --only=production
 
-COPY . . 
+# Copia o restante dos arquivos do projeto
+COPY . .
 
-EXPOSE 3000 
+# Cria o diretório de logs se não existir
+RUN mkdir -p ./logs/sql
+RUN touch " " >> ./logs/sql.log.txt
 
-CMD ["npm", "start"]
+# Comando para iniciar o consumer
+CMD ["node", "consumer.js"]
