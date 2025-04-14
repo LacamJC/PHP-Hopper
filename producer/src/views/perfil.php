@@ -19,7 +19,7 @@ if (!empty($_SESSION['id'])) {
     UserGateway::setConnection($conn);
     $user = UserGateway::find($_SESSION['id']);
 } else {
-    header('Location ../../index.php');
+    header('Location:./index.php');
 }
 
 ?>

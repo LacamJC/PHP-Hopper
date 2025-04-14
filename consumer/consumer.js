@@ -1,6 +1,7 @@
 const amqp = require('amqplib');
 const path = require("path");
 const fs = require("fs");
+const { sendEmail } = require('./sendMail');
 async function startConsumer() {
     try {
         // 1. Conecta ao RabbitMQ
@@ -18,6 +19,7 @@ async function startConsumer() {
             if (message !== null) {
                 console.log(' [x] Recebido: %s', message.content.toString());
                 createLog(message.content.toString());
+                sendEmail(message.content.toString());
                 channel.ack(message); // Confirma o processamento
             }
         });

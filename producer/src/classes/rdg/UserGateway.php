@@ -1,5 +1,4 @@
 <?php
-
 class UserGateway
 {
     private static $conn;

@@ -94,7 +94,7 @@ $alert = new Alert
                 <label class="form-check-label" for="show">Mostrar senha</label>
             </div>
             <div class="mb-3">
-                <p class="fw-light">Não possui uma conta ? <a href="../index.php" class="link">Cadastre-se aqui</a></p>
+                <p class="fw-light">Não possui uma conta ? <a href="./index.php" class="link">Cadastre-se aqui</a></p>
             </div>
             <button type="submit" class="btn btn-primary">Cadastrar</button>
         </form>
