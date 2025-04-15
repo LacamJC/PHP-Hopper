@@ -10,8 +10,8 @@
 </head>
 <?php
 session_start();
-require_once '../classes/rdg/UserGateway.php';
-require_once '../classes/events/Alert.php';
+use Database\Gateway\UserGateway;
+use Components\Alert;
 try {
     $alert = new Alert;
     $conn = new PDO('sqlite:../database/database.db');

@@ -1,7 +1,8 @@
 <?php
-
 session_start();
-require_once '../classes/rdg/UserGateway.php';
+
+use Database\Gateway\UserGateway;
+
 try {
 
     unset($_SESSION['id']);

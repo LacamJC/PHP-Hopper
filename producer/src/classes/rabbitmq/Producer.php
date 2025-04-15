@@ -1,9 +1,9 @@
 <?php
-
-require_once __DIR__ . '../../../../vendor/autoload.php';
-
+namespace RabbitMQ;
 use PhpAmqpLib\Connection\AMQPStreamConnection;
 use PhpAmqpLib\Message\AMQPMessage;
+use PDO;
+use Exception;
 
 class Producer
 {

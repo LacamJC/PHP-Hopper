@@ -1,4 +1,8 @@
-<?php
+<?php 
+namespace Database\Gateway;
+use PDO;
+
+
 class UserGateway
 {
     private static $conn;

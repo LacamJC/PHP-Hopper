@@ -1,7 +1,8 @@
 <?php
-
 session_start();
-require_once '../classes/rdg/UserGateway.php';
+
+use Database\Gateway\UserGateway;
+
 try {
     $conn = new PDO('sqlite:../database/database.db');
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

@@ -9,7 +9,8 @@
 </head>
 <?php
 session_start();
-require_once '../classes/events/Alert.php';
+use Components\Alert;
+
 $alert = new Alert;
 ?>
 

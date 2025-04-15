@@ -1,8 +1,5 @@
-
 require('dotenv').config(); // Adicione esta linha no topo
 const nodemailer = require('nodemailer');
-
-
 const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 465,
@@ -10,14 +7,8 @@ const transporter = nodemailer.createTransport({
     auth: {
         user: process.env.EMAIL,
         pass: process.env.PASS
-
     }
 });
-// 2. Opções do e-mail
-
-
-
-
 exports.sendEmail = async (para) => { // Tornar async
     try {
         const mailOptions = {
@@ -33,6 +24,5 @@ exports.sendEmail = async (para) => { // Tornar async
         return info;
     } catch (error) {
         console.error('Falha no envio:', error.message);
-        
     }
 }

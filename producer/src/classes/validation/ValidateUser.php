@@ -1,5 +1,8 @@
 <?php
 
+namespace Validation\Inputs;
+use Exception;
+
 class ValidateUser
 {
     private $nome;

@@ -1,11 +1,12 @@
 <?php
-require_once '../classes/validation/ValidateUser.php';
 session_start();
-require_once '../classes/rdg/UserGateway.php';
-require_once '../classes/rabbitmq/Producer.php';
-require_once __DIR__ . '../../../vendor/autoload.php';
 
+use Validation\Inputs\ValidateUser;
+use Database\Gateway\UserGateway;
+use RabbitMQ\Producer;
 use PhpAmqpLib\Connection\AMQPStreamConnection;
+
+require_once __DIR__ . '../../../vendor/autoload.php';
 
 try {
     $conn = new PDO('sqlite:../database/database.db');
