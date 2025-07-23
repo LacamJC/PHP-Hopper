@@ -1,7 +1,3 @@
-````markdown
-================================================
-FILE: README.md
-================================================
 
 # 📝 Sistema de CRUD com Mensageria (PHP + Node.js + RabbitMQ)
 
@@ -20,14 +16,6 @@ Sistema de autenticação e CRUD com arquitetura distribuída, utilizando:
 | Consumer (Node.js) | Grava logs em arquivo com timestamp e envia e-mail | amqplib 0.10.7        |
 | Fila `log_sql`     | Canal de comunicação entre serviços   | RabbitMQ 3.12+        |
 
-### 📊 Fluxo de Mensagens
-```mermaid
-graph LR
-    A[PHP] -->|Publica mensagens| B[RabbitMQ]
-    B -->|Consome mensagens| C[Node.js]
-    C --> D[(Arquivo log.txt)]
-    C --> E[(Envio de E-mail)]
-````
 
 ## 🛠️ Configuração do Ambiente
 
@@ -105,9 +93,4 @@ projeto/
 │   ├── config.php
 │   └── producer.php        # Exemplo básico de produtor (pode ser removido/alterado)
 └── README.md
-```
-
-[⬆ Voltar ao topo](https://www.google.com/search?q=%23-sistema-de-crud-com-mensageria-php--nodejs--rabbitmq)
-
-```
 ```
